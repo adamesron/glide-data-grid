@@ -606,18 +606,18 @@ const DataGrid: React.FunctionComponent<Props> = p => {
                                 cell.kind === GridCellKind.Uri ||
                                 cell.kind === GridCellKind.Number
                             ) {
-                                drawTextCell(ctx, theme, cell.data, x, y, c.width, rh);
+                                drawTextCell(ctx, theme, cell.displayData, x, y, c.width, rh);
                             } else if (cell.kind === GridCellKind.Boolean) {
                                 if (cell.checked || cell.showUnchecked) {
                                     drawBoolean(ctx, theme, cell.checked, x, y, c.width, rh, highlighted);
                                 }
                             } else if (cell.kind === GridCellKind.Bubble) {
-                                drawBubbles(ctx, theme, cell.data, x, y, c.width, rh, highlighted);
+                                drawBubbles(ctx, theme, cell.displayData, x, y, c.width, rh, highlighted);
                             } else if (cell.kind === GridCellKind.Image && imageLoader.current !== undefined) {
                                 drawImage(
                                     ctx,
                                     theme,
-                                    cell.data,
+                                    cell.displayData,
                                     c.sourceIndex,
                                     row,
                                     x,
@@ -627,7 +627,7 @@ const DataGrid: React.FunctionComponent<Props> = p => {
                                     imageLoader.current
                                 );
                             } else if (cell.kind === GridCellKind.RowID) {
-                                drawTextCell(ctx, theme, cell.data, x, y, c.width, rh, theme.fgColorLight);
+                                drawTextCell(ctx, theme, cell.displayData, x, y, c.width, rh, theme.fgColorLight);
                             } else if (cell.kind === GridCellKind.Protected) {
                                 drawProtectedCell(ctx, theme, x, y, c.width, rh, !highlighted);
                             }

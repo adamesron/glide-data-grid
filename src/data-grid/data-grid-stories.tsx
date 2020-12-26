@@ -42,7 +42,7 @@ export function Simplenotest() {
             }))}
             getCellContent={([col, row]) => ({
                 kind: GridCellKind.Text,
-                data: `${col},${row} Testing things that are way too long`,
+                displayData: `${col},${row} Testing things that are way too long`,
                 editData: `${col},${row} Testing things that are way too long`,
                 allowOverlay: false,
                 owned: true,
@@ -70,7 +70,7 @@ export function SelectedCellnotest() {
             }))}
             getCellContent={([col, row]) => ({
                 kind: GridCellKind.Text,
-                data: `${col},${row} Testing things that are way too long`,
+                displayData: `${col},${row} Testing things that are way too long`,
                 editData: `${col},${row} Testing things that are way too long`,
                 allowOverlay: false,
                 owned: true,
@@ -99,7 +99,7 @@ export function SelectedRownotest() {
             }))}
             getCellContent={([col, row]) => ({
                 kind: GridCellKind.Text,
-                data: `${col},${row} Testing things that are way too long`,
+                displayData: `${col},${row} Testing things that are way too long`,
                 editData: `${col},${row} Testing things that are way too long`,
                 allowOverlay: false,
                 owned: true,
@@ -128,7 +128,7 @@ export const SelectedColumnnotest = () => {
             }))}
             getCellContent={([col, row]) => ({
                 kind: GridCellKind.Text,
-                data: `${col},${row} Testing things that are way too long`,
+                displayData: `${col},${row} Testing things that are way too long`,
                 editData: `${col},${row} Testing things that are way too long`,
                 allowOverlay: false,
                 owned: true,

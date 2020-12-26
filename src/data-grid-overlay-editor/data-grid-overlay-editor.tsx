@@ -38,7 +38,7 @@ const DataGridOverlayEditor: React.FunctionComponent<Props> = p => {
             } else if (content.kind === GridCellKind.Markdown || content.kind === GridCellKind.Uri) {
                 setTempValue({
                     ...content,
-                    data: ev.target.value,
+                    displayData: ev.target.value,
                 });
             }
         },
@@ -51,7 +51,7 @@ const DataGridOverlayEditor: React.FunctionComponent<Props> = p => {
                 onFinishEditing(
                     {
                         ...content,
-                        data: [newValue],
+                        displayData: [newValue],
                     },
                     [0, 0]
                 );
@@ -112,7 +112,7 @@ const DataGridOverlayEditor: React.FunctionComponent<Props> = p => {
             editor = (
                 <UriOverlayEditor
                     forceEditMode={forceEditMode}
-                    uri={targetValue.data}
+                    uri={targetValue.displayData}
                     onKeyDown={onKeyDown}
                     onChange={onStringValueChange}
                 />
@@ -132,7 +132,7 @@ const DataGridOverlayEditor: React.FunctionComponent<Props> = p => {
         case GridCellKind.Image:
             editor = (
                 <ImageEditor
-                    urls={targetValue.data}
+                    urls={targetValue.displayData}
                     canWrite={targetValue.allowAdd}
                     onCancel={onClickOutside}
                     onChange={onImageValueChange}
@@ -141,12 +141,12 @@ const DataGridOverlayEditor: React.FunctionComponent<Props> = p => {
             );
             break;
         case GridCellKind.Bubble:
-            editor = <BubblesOverlayEditor bubbles={targetValue.data} onKeyDown={onKeyDown} />;
+            editor = <BubblesOverlayEditor bubbles={targetValue.displayData} onKeyDown={onKeyDown} />;
             break;
         case GridCellKind.Markdown:
             editor = (
                 <MarkdownOverlayEditor
-                    markdown={targetValue.data}
+                    markdown={targetValue.displayData}
                     onKeyDown={onKeyDown}
                     onChange={onStringValueChange}
                     forceEditMode={forceEditMode}

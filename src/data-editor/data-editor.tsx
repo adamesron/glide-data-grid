@@ -170,7 +170,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                 if (row === 0) {
                     return {
                         kind: GridCellKind.Text,
-                        data: "",
+                        displayData: "",
                         editData: "",
                         allowOverlay: true,
                     };
@@ -274,7 +274,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                         case GridCellKind.Uri:
                             content = {
                                 ...content,
-                                data: initialValue,
+                                displayData: initialValue,
                             };
                             break;
                     }
@@ -434,10 +434,10 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                 case GridCellKind.RowID:
                 case GridCellKind.Uri:
                 case GridCellKind.Number:
-                    return escape(cell.data);
+                    return escape(cell.displayData);
                 case GridCellKind.Image:
                 case GridCellKind.Bubble:
-                    return cell.data.reduce((pv, cv) => `${escape(pv)},${escape(cv)}`);
+                    return cell.displayData.reduce((pv, cv) => `${escape(pv)},${escape(cv)}`);
                 case GridCellKind.Boolean:
                     return cell.checked ? "TRUE" : "FALSE";
                 case GridCellKind.Loading:
@@ -705,7 +705,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                             case GridCellKind.Uri:
                                 mangledOnCellEdited?.([col - rowMarkerOffset, row], {
                                     ...cellValue,
-                                    data: text,
+                                    displayData: text,
                                 });
                                 break;
                         }
@@ -761,13 +761,13 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                                 case GridCellKind.Uri:
                                     mangledOnCellEdited?.(cell, {
                                         ...cellValue,
-                                        data: "",
+                                        displayData: "",
                                     });
                                     break;
                                 case GridCellKind.Image:
                                     mangledOnCellEdited?.(cell, {
                                         ...cellValue,
-                                        data: [],
+                                        displayData: [],
                                     });
                                     break;
                                 case GridCellKind.Boolean:

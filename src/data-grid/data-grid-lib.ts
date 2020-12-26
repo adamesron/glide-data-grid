@@ -22,7 +22,7 @@ export function makeEditCell(cell: GridCell): GridCell {
         case GridCellKind.Text:
             return {
                 ...cell,
-                data: "",
+                displayData: "",
                 editData: "",
             };
         case GridCellKind.Markdown:
@@ -30,7 +30,7 @@ export function makeEditCell(cell: GridCell): GridCell {
         case GridCellKind.RowID:
             return {
                 ...cell,
-                data: "",
+                displayData: "",
                 allowOverlay: isEditable,
             };
         case GridCellKind.Protected:
@@ -40,13 +40,13 @@ export function makeEditCell(cell: GridCell): GridCell {
         case GridCellKind.Bubble:
             return {
                 ...cell,
-                data: [],
+                displayData: [],
                 allowOverlay: isEditable,
             };
         case GridCellKind.Number:
             return {
                 ...cell,
-                data: "",
+                displayData: "",
                 editData: undefined,
             };
         default:

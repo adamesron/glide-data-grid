@@ -112,25 +112,25 @@ interface ProtectedCell extends BaseGridCell {
 
 interface TextCell extends BaseGridCell {
     readonly kind: GridCellKind.Text;
-    readonly data: string;
+    readonly displayData: string;
     readonly editData: string;
 }
 
 interface NumberCell extends BaseGridCell {
     readonly kind: GridCellKind.Number;
-    readonly data: string;
+    readonly displayData: string;
     readonly editData: number | undefined;
 }
 
 interface ImageCell extends BaseGridCell {
     readonly kind: GridCellKind.Image;
-    readonly data: string[];
+    readonly displayData: string[];
     readonly allowAdd: boolean;
 }
 
 interface BubbleCell extends BaseGridCell {
     readonly kind: GridCellKind.Bubble;
-    readonly data: string[];
+    readonly displayData: string[];
 }
 
 interface BooleanCell extends BaseGridCell {
@@ -142,15 +142,15 @@ interface BooleanCell extends BaseGridCell {
 
 interface RowIDCell extends BaseGridCell {
     readonly kind: GridCellKind.RowID;
-    readonly data: string;
+    readonly displayData: string;
 }
 
 interface MarkdownCell extends BaseGridCell {
     readonly kind: GridCellKind.Markdown;
-    readonly data: string;
+    readonly displayData: string;
 }
 
 interface UriCell extends BaseGridCell {
     readonly kind: GridCellKind.Uri;
-    readonly data: string;
+    readonly displayData: string;
 }

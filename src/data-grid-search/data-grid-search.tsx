@@ -145,7 +145,7 @@ const DataGridSearch: React.FunctionComponent<DataGridSearchProps> = p => {
                             case GridCellKind.Number:
                             case GridCellKind.Uri:
                             case GridCellKind.Markdown:
-                                testString = cell.data;
+                                testString = cell.displayData;
                                 break;
                             case GridCellKind.Boolean:
                                 testString = cell.checked.toString();
@@ -155,7 +155,7 @@ const DataGridSearch: React.FunctionComponent<DataGridSearchProps> = p => {
                                 // I know its lazy, but unless someone is actually
                                 // searching for the whale emoji, this is pretty side effect
                                 // free. And ya know... it's nice and easy to do...
-                                testString = cell.data.join("🐳");
+                                testString = cell.displayData.join("🐳");
                                 break;
                         }
 
