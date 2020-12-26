@@ -608,8 +608,8 @@ const DataGrid: React.FunctionComponent<Props> = p => {
                             ) {
                                 drawTextCell(ctx, theme, cell.displayData, x, y, c.width, rh);
                             } else if (cell.kind === GridCellKind.Boolean) {
-                                if (cell.checked || cell.showUnchecked) {
-                                    drawBoolean(ctx, theme, cell.checked, x, y, c.width, rh, highlighted);
+                                if (cell.displayData || cell.showUnchecked) {
+                                    drawBoolean(ctx, theme, cell.displayData, x, y, c.width, rh, highlighted);
                                 }
                             } else if (cell.kind === GridCellKind.Bubble) {
                                 drawBubbles(ctx, theme, cell.displayData, x, y, c.width, rh, highlighted);

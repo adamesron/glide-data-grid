@@ -17,7 +17,7 @@ export function makeEditCell(cell: GridCell): GridCell {
         case GridCellKind.Boolean:
             return {
                 ...cell,
-                checked: false,
+                displayData: false,
             };
         case GridCellKind.Text:
             return {

@@ -109,7 +109,7 @@ And supports newline chars and automatic wrapping text that just needs to be lon
     if (col === 6) {
         return {
             kind: GridCellKind.Boolean,
-            checked: row % 3 === 0 || row % 5 === 0,
+            displayData: row % 3 === 0 || row % 5 === 0,
             showUnchecked: true,
             allowEdit: false,
             allowOverlay: false,

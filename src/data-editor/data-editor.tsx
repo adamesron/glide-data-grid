@@ -160,7 +160,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
             if (col === 0 && rowMarkers) {
                 return {
                     kind: GridCellKind.Boolean,
-                    checked: selectedRows?.includes(row),
+                    displayData: selectedRows?.includes(row),
                     showUnchecked: hoveredFirstRow === row,
                     allowOverlay: false,
                     allowEdit: false,
@@ -288,7 +288,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
             } else if (c.kind === GridCellKind.Boolean) {
                 mangledOnCellEdited?.([col - rowMarkerOffset, row], {
                     ...c,
-                    checked: !c.checked,
+                    displayData: !c.displayData,
                 });
             } else {
                 onCellClicked?.([col - rowMarkerOffset, row]);
@@ -439,7 +439,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                 case GridCellKind.Bubble:
                     return cell.displayData.reduce((pv, cv) => `${escape(pv)},${escape(cv)}`);
                 case GridCellKind.Boolean:
-                    return cell.checked ? "TRUE" : "FALSE";
+                    return cell.displayData ? "TRUE" : "FALSE";
                 case GridCellKind.Loading:
                     return "#LOADING";
                 case GridCellKind.Protected:
@@ -773,7 +773,7 @@ const DataEditor: React.FunctionComponent<DataEditorProps> = p => {
                                 case GridCellKind.Boolean:
                                     mangledOnCellEdited?.(cell, {
                                         ...cellValue,
-                                        checked: false,
+                                        displayData: false,
                                     });
                                     break;
                                 case GridCellKind.Number:

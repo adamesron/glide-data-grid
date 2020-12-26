@@ -135,7 +135,7 @@ interface BubbleCell extends BaseGridCell {
 
 interface BooleanCell extends BaseGridCell {
     readonly kind: GridCellKind.Boolean;
-    readonly checked: boolean;
+    readonly displayData: boolean;
     readonly showUnchecked: boolean;
     readonly allowEdit: boolean;
 }

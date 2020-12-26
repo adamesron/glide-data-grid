@@ -148,7 +148,7 @@ const DataGridSearch: React.FunctionComponent<DataGridSearchProps> = p => {
                                 testString = cell.displayData;
                                 break;
                             case GridCellKind.Boolean:
-                                testString = cell.checked.toString();
+                                testString = cell.displayData.toString();
                                 break;
                             case GridCellKind.Image:
                             case GridCellKind.Bubble:
